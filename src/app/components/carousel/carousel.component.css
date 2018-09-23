@@ -1,0 +1,19 @@
+.carousel{
+  overflow:hidden;
+  width:100%;
+}
+.item-carousel{
+  list-style:none;
+  position:relative;
+  width:500%; /* Number of panes * 100% */
+  overflow:hidden; /* Clear floats */
+  /* Slide effect Animations*/
+  -moz-animation:carousel 30s infinite;
+  -webkit-animation:carousel 30s infinite;
+  animation:carousel 30s infinite;
+}
+.item-carousel > img{
+  display:block;
+  width:100%;
+  max-width:100%;
+}

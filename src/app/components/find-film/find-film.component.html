@@ -1,15 +1,42 @@
-<!--<nav>-->
-  <!--<a routerLink="/detail">FindFilm</a>-->
-<!--</nav>-->
 <ng-container>
   <form>
-    <div>
-      <span> Busque su película </span>
-      <input type='text'
-             class='findInput'/>
+    <div class='col-sm-12 space'>
+    </div>
+    <div class='col-sm-12'>
+      <div class='col-sm-6'>
+        <span> Busque su película </span>
+        <input type='text'
+               class='findInput'
+               (keyup)='updateFilter($event)'/>
+        <button>
+          <a routerLink="/detail">Ir</a>
+        </button>
+      </div>
+    </div>
+    <div class='col-sm-12 space'>
+    </div>
+    <div class='col-sm-12 spaceList'>
+      <ul *ngFor='let list of contentFilms'>
+        <a routerLink="/detail"
+           (click)='detailFilm(list)'>
+          <li>{{list}}</li>
+        </a>
+      </ul>
+    </div>
+
+
+    <div class='col-sm-12'>
+      <div class='col-sm-3 space'>
+      </div>
+      <div class='col-sm-6 space'>
+        <app-carousel></app-carousel>
+      </div>
+      <div class='col-sm-3 space'>
+      </div>
     </div>
   </form>
+
+  <router-outlet></router-outlet>
+
+
 </ng-container>
-
-
-

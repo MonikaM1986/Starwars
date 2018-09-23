@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import {RouterModule, Routes} from '@angular/router';
 import {FindFilmComponent} from './components/find-film/find-film.component';
 import {DetailComponent} from './components/detail/detail.component';
+import {CarouselComponent} from 'angular2-carousel';
 
 const routes: Routes = [
   {
@@ -12,12 +13,18 @@ const routes: Routes = [
   },
   {
     path: 'findFilm',
-    component: FindFilmComponent
+    component: FindFilmComponent,
   },
   {
     path: 'detail',
-    component: DetailComponent
-  }
+    component: DetailComponent,
+  },
+
+  // { path: 'findFilm', component: FindFilmComponent,
+  //   children: [
+  //     { path: 'detail', component: DetailComponent }
+  //   ]
+  // }
 ];
 export const routingModule: ModuleWithProviders = RouterModule.forRoot(routes);
 

@@ -1,14 +1,7 @@
-.expansionPanelMaterial {
-    background-color: rgba(255, 255, 255, 0.6);
+.space{
+  height:40px;
 }
+.spaceList{
+  height:250px;
 
-.expansionPanelHeaderMaterial {
-  transition: background-color .3s ease-out;
-}
-.expansionPanelTitleMaterial,
-.expansionPanelDescriptionMaterial {
-  font-weight: bold;
-}
-.mat-expansion-indicator::after {
-  transform-origin: right;
 }

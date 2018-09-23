@@ -1,3 +1,14 @@
-<p>
-  detail works!
-</p>
+<ng-container>
+    <div class='col-sm-12 space'>
+    </div>
+  <div class='col-sm-12 space'>
+    <h2>DETALLE DE LA PELÍCULA </h2>
+    <ul *ngFor='let sum of summary'>
+      <li>
+        {{sum}}
+      </li>
+    </ul>
+  </div>
+
+</ng-container>
+

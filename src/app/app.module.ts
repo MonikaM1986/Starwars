@@ -9,7 +9,6 @@ import {CarouselModule} from 'angular2-carousel';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import {HttpClientModule} from '@angular/common/http';
 import {StarFilmProvider} from './providers/star-film/star-film';
-import {DataProvider} from './providers/data/data';
 
 @NgModule({
   declarations: [
@@ -25,8 +24,7 @@ import {DataProvider} from './providers/data/data';
     CarouselModule,
     HttpClientModule
   ],
-  providers: [StarFilmProvider,
-              DataProvider],
+  providers: [StarFilmProvider],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

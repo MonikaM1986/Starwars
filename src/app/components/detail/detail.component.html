@@ -1,14 +1,16 @@
 <ng-container>
-    <div class='col-sm-12 space'>
-    </div>
   <div class='col-sm-12 space'>
-    <h2>DETALLE DE LA PELÍCULA </h2>
-    <ul *ngFor='let sum of summary'>
-      <li>
-        {{sum}}
+  </div>
+  <div class='col-sm-12 space'>
+    <h2>DETAIL OF FILM </h2>
+    <ul>
+      <li *ngFor='let item of attributes'>
+        {{ item.charAt(0).toUpperCase()+item.slice(1) + ":" + data[item]}}
+        <!--<h3 *ngIf='item === "title"'>{{data[item]}}</h3>-->
+        <!--<span *ngIf='item !== "title"'>{{item}} :</span>-->
+        <!--<span *ngIf='item !== "title"'> {{data[item]}}</span>-->
       </li>
     </ul>
   </div>
-
 </ng-container>
 

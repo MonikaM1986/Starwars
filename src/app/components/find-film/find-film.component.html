@@ -17,10 +17,7 @@
     </div>
     <div class='col-sm-12 spaceList'>
       <ul *ngFor='let list of contentFilms'>
-        <a routerLink="/detail"
-           (click)='detailFilm(list)'>
-          <li>{{list}}</li>
-        </a>
+          <li><a (click)='detailFilm(list)'>{{list}}</a></li>
       </ul>
     </div>
 

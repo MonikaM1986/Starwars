@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DataProvider} from '../../providers/data/data';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-detail',
@@ -8,8 +8,12 @@ import {DataProvider} from '../../providers/data/data';
 })
 
 export class DetailComponent implements OnInit {
-  constructor(private data: DataProvider) {
-    console.log(this.data);
+  data: any = {};
+  attributes: any = [];
+  titles: any = [];
+
+  constructor(private router: Router,
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -17,9 +21,13 @@ export class DetailComponent implements OnInit {
   }
 
   detailFilm() {
-    // for (const data in this.data) {
-    //   console.log(data.storage.director);
-    // }
-
+    this.route.queryParams.subscribe((params) => {
+      this.attributes = Object.keys(params);
+      for (const items of this.attributes) {
+        this.titles.push(items.toUpperCase());
+      }
+      this.data = params;
+      console.log(this.titles);
+    });
   }
 }

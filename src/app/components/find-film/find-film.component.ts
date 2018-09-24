@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {StarFilmProvider} from '../../providers/star-film/star-film';
-import {Router} from '@angular/router';
-import {DataProvider} from '../../providers/data/data';
+import {Router, ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-find-film',
@@ -20,7 +19,7 @@ export class FindFilmComponent implements OnInit {
 
   constructor(private film: StarFilmProvider,
               private router: Router,
-              private data: DataProvider) {
+              private route: ActivatedRoute) {
   }
 
   ngOnInit() {
@@ -35,6 +34,7 @@ export class FindFilmComponent implements OnInit {
         this.contentFilms.push(this.peopleName);
       }
       this.tempData = [...this.contentFilms];
+      console.log(this.tempData);
     });
   }
 
@@ -63,10 +63,10 @@ export class FindFilmComponent implements OnInit {
       }
     }
     this.film.getUrl(url).subscribe(res => {
-      this.dataSubmit = res.body;
-      this.data.storage = this.dataSubmit;
-
-      this.router.navigate(['detail']);
+      this.router.navigate(['detail'],
+        {
+          queryParams: res.body
+        });
     });
   }
 }

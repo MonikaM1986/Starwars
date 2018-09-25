@@ -2,13 +2,10 @@
   <div class='col-sm-12 space'>
   </div>
   <div class='col-sm-12 space'>
-    <h2>DETAIL OF FILM </h2>
+    <h2>DETAILS OF FILM </h2>
     <ul>
       <li *ngFor='let item of attributes'>
-        {{ item.charAt(0).toUpperCase()+item.slice(1) + ":" + data[item]}}
-        <!--<h3 *ngIf='item === "title"'>{{data[item]}}</h3>-->
-        <!--<span *ngIf='item !== "title"'>{{item}} :</span>-->
-        <!--<span *ngIf='item !== "title"'> {{data[item]}}</span>-->
+        {{ (item.charAt(0).toUpperCase()+item.slice(1)).replace('_',' ') + ":" + data[item]}}
       </li>
     </ul>
   </div>

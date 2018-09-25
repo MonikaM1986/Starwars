@@ -13,9 +13,8 @@ export class FindFilmComponent implements OnInit {
   resultName: any;
   contentFilms: any = [];
   tempData: any = [];
-  dataSubmit: any = [];
-  // listFilm: any = [];
-  // showList: boolean = false;
+  listFilm: any = [];
+  showList = false;
 
   constructor(private film: StarFilmProvider,
               private router: Router,
@@ -38,22 +37,22 @@ export class FindFilmComponent implements OnInit {
     });
   }
 
-  // updateFilter(event) {
-  //   const val = event.target.value.toLowerCase();
-  //   this.contentFilms = this.tempData.filter(function (d) {
-  //     let result = '';
-  //     for (const keys in d) {
-  //       result += d[keys];
-  //     }
-  //     if (result.toLowerCase().indexOf(val) !== -1) {
-  //       this.listFilm.push(result);
-  //       this.showList = true;
-  //     } else {
-  //       this.showList = false;
-  //     }
-  //     console.log(this.listFilm);
-  //   });
-  // }
+  updateFilter(event) {
+    const val = event.target.value.toLowerCase();
+    this.contentFilms = this.tempData.filter(function (d) {
+      let result = '';
+      for (const keys in d) {
+        result += d[keys];
+      }
+      if (result.toLowerCase().indexOf(val) !== -1) {
+        this.listFilm.push(result);
+        this.showList = true;
+      } else {
+        this.showList = false;
+      }
+      console.log(this.listFilm);
+    });
+  }
 
   detailFilm(e) {
     let url;
